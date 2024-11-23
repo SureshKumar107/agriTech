@@ -9,6 +9,7 @@ import MarketPlace from "./pages/MarketPlace";
 import AboutUs from "./pages/AboutUs";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
+import TradingPage from "./pages/TradingPage";
 import Footer from "./components/Footer";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/tradepage" element={<TradingPage/>}/>
       </Routes>
       <Footer/>
     </Router>
