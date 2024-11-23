@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const WeatherPrediction = () => {
   return (
@@ -63,7 +64,9 @@ const WeatherPrediction = () => {
             weather changes and make informed farming decisions.
           </p>
           <button className="bg-blue-600 text-white py-2 px-4 rounded-lg font-semibold shadow-md hover:bg-blue-700 transition duration-200">
-            View Detailed Forecast
+          <Link to="/detailed-forecast">
+           View Detailed Forecast
+           </Link>
           </button>
         </div>
       </div>

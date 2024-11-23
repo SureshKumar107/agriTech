@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Logo from "../img/Logo/Logo.jpg";
+
 
 const Navbar = () => {
   return (
@@ -7,7 +9,7 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="text-2xl font-bold">
-          <Link to="/">AgriInfo</Link>
+          <Link to="/"><img src={ Logo } alt="AgriTech Logo" className="h-9 w-auto" /></Link>
         </div>
         {/* Navigation Links */}
         <div className="flex space-x-6">
@@ -28,6 +30,9 @@ const Navbar = () => {
           </Link>
           <Link to="/about-us" className="hover:underline">
             About Us
+          </Link>
+          <Link to="/contact-us" className="hover:underline">
+            Contact Us
           </Link>
           <Link to="/sign-up" className="hover:underline">
             Sign Up

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"
 
 const CropGuide = () => {
   return (
@@ -100,7 +101,9 @@ const CropGuide = () => {
             personalized advice.
           </p>
           <button className="px-6 py-3 bg-green-600 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 transition">
+            <Link to="/contact-experts">
             Contact Experts
+            </Link>
           </button>
         </div>
       </div>

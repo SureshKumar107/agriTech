@@ -11,6 +11,10 @@ import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import TradingPage from "./pages/TradingPage";
 import Footer from "./components/Footer";
+import ContactUs from "./pages/ContactUs";
+import ExpertSupport from "./additional pages/ExpertSupport";
+import DetailedForecast from "./additional pages/DetailedForecast";
+import ContactExperts from "./additional pages/ContactExperts";
 
 function App() {
   return (
@@ -26,6 +30,10 @@ function App() {
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/tradepage" element={<TradingPage/>}/>
+        <Route path="/contact-us" element={<ContactUs/>}/>
+        <Route path="/expert-support" element={<ExpertSupport/>}/>
+        <Route path="/detailed-forecast" element={<DetailedForecast/>}/>
+        <Route path="/contact-experts" element={<ContactExperts/>}/>
       </Routes>
       <Footer/>
     </Router>
