@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const SignIn = () => {
   return (
@@ -99,7 +100,9 @@ const SignIn = () => {
               href="#"
               className="text-blue-600 hover:underline font-medium"
             >
-              Sign Up
+            <Link to="/sign-up">
+            Sign Up 
+            </Link>
             </a>
           </p>
         </div>

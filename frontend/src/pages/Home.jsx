@@ -16,7 +16,7 @@ const Home = () => {
     <div className="p-6 bg-gradient-to-b from-green-100 via-white to-green-50 min-h-screen">
       <div className="max-w-4xl mx-auto text-center">
         <h1 className="text-4xl font-bold text-green-700 mb-6">
-          Welcome to AgriInfo 🌾
+          Welcome to AgriTech 🌾
         </h1>
         <p className="text-lg text-gray-600 mb-8">
           Your one-stop solution for empowering farmers with the latest
@@ -79,6 +79,28 @@ const Home = () => {
             <p className="text-gray-700 mb-4">
               Connect with agricultural experts for personalized advice and
               problem-solving.
+            </p>
+            <p className="text-green-500 font-semibold">Click to Explore</p>
+          </Link>
+
+           {/* Market Place */}
+           <Link to="/market-place" className="p-6 bg-white shadow-lg rounded-lg hover:shadow-xl transition transform hover:scale-105">
+            <h2 className="text-xl font-semibold text-green-600 mb-3">
+              🛒 Market Place
+            </h2>
+            <p className="text-gray-700 mb-4">
+            Discover a wide range of tools, seeds, and services designed to enhance your agricultural journey. 
+            </p>
+            <p className="text-green-500 font-semibold">Click to Explore</p>
+          </Link>
+
+          {/* About Us */}
+          <Link to="/about-us" className="p-6 bg-white shadow-lg rounded-lg hover:shadow-xl transition transform hover:scale-105">
+            <h2 className="text-xl font-semibold text-green-600 mb-3">
+              ℹ️ About Us
+            </h2>
+            <p className="text-gray-700 mb-4">
+            Transforming lives with innovative, sustainable solutions for a brighter future.
             </p>
             <p className="text-green-500 font-semibold">Click to Explore</p>
           </Link>

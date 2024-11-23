@@ -1,4 +1,5 @@
 import React from "react";
+import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -10,7 +11,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-semibold mb-4">About Us</h3>
             <p className="text-gray-200">
-              We are AgriInfo, committed to helping farmers through advanced
+              We are AgriTech, committed to helping farmers through advanced
               agricultural tools, weather predictions, crop guides, and expert
               advice.
             </p>
@@ -33,7 +34,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Facebook
+               <FaFacebook className="h-6 w-6" />
               </a>
               <a
                 href="https://twitter.com"
@@ -41,7 +42,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Twitter
+                <FaTwitter className="h-6 w-6" />
               </a>
               <a
                 href="https://instagram.com"
@@ -49,7 +50,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Instagram
+                 <FaInstagram className="h-6 w-6" />
               </a>
             </div>
           </div>
@@ -57,7 +58,7 @@ const Footer = () => {
 
         {/* Bottom Section for Copyright and Legal Links */}
         <div className="mt-8 text-center text-gray-200 text-sm">
-          <p>© 2024 AgriInfo, All Rights Reserved.</p>
+          <p>© 2024 AgriTech, All Rights Reserved.</p>
           <div className="mt-2">
             <a
               href="/privacy-policy"
