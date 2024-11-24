@@ -5,7 +5,7 @@ import Logo from "../img/Logo/Logo.jpg";
 
 const Navbar = () => {
   return (
-    <nav className="bg-blue-600 p-4 text-white shadow-md">
+    <nav className="bg-white text-black  p-4  shadow-md">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="text-2xl font-bold">
