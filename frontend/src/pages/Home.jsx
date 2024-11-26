@@ -1,43 +1,58 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import backgroundImage from "../img/Home/Background.jpg"; // Ensure this path is correct
 
 const Home = () => {
-  // Manage image state
-  const [currentImage, setCurrentImage] = useState(
-    "https://via.placeholder.com/600x300.png?text=Agriculture+1"
-  );
-
-  // Function to change image when clicked
-  const handleImageClick = (imageUrl) => {
-    setCurrentImage(imageUrl);
-  };
-
   return (
-    <div className="p-6 bg-gradient-to-b from-green-100 via-white to-green-50 min-h-screen">
-      <div className="max-w-4xl mx-auto text-center">
-        <h1 className="text-4xl font-bold text-green-700 mb-6">
+    <div
+      className="min-h-screen bg-cover bg-center bg-fixed flex items-center justify-center"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+      }}
+    >
+      <div className="max-w-4xl mx-auto text-center p-6 md:p-10">
+        <h1 className="text-3xl md:text-4xl font-extrabold text-green-700 mb-6">
           Welcome to AgriTech 🌾
         </h1>
-        <p className="text-lg text-gray-600 mb-8">
+        <p className="text-base md:text-lg text-gray-200 mb-8">
           Your one-stop solution for empowering farmers with the latest
           agricultural insights. Discover tools, tips, and updates to enhance
           your farming journey.
         </p>
 
-        {/* Interactive Image */}
-        <div className="mb-8">
-          <img
-            src={currentImage}
-            alt="Agriculture"
-            className="w-full h-auto rounded-lg shadow-lg cursor-pointer"
-            onClick={() => handleImageClick("https://via.placeholder.com/600x300.png?text=Agriculture+2")}
-          />
+        {/* Current Weather Forecast Section */}
+        <div className="bg-white shadow-xl rounded-lg p-8 mb-10 transition transform hover:scale-105">
+          <h2 className="text-lg md:text-xl font-semibold text-green-600 mb-4">
+            🌤️ Current Weather Forecast
+          </h2>
+          <div className="text-left text-gray-700">
+            <p className="flex items-center">
+              <span className="font-bold text-green-600">Temperature:</span> 28°C{" "}
+              <span role="img" aria-label="sun" className="ml-2">☀️</span>
+            </p>
+            <p className="flex items-center">
+              <span className="font-bold text-green-600">Condition:</span> Sunny{" "}
+              <span role="img" aria-label="sun with face" className="ml-2">🌞</span>
+            </p>
+            <p className="flex items-center">
+              <span className="font-bold text-green-600">Humidity:</span> 45%{" "}
+              <span role="img" aria-label="droplet" className="ml-2">💧</span>
+            </p>
+            <p className="flex items-center">
+              <span className="font-bold text-green-600">Wind Speed:</span> 10 km/h{" "}
+              <span role="img" aria-label="wind" className="ml-2">💨</span>
+            </p>
+          </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        {/* Cards Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
           {/* Weather Prediction */}
-          <Link to="/weather-prediction" className="p-6 bg-white shadow-lg rounded-lg hover:shadow-xl transition transform hover:scale-105">
-            <h2 className="text-xl font-semibold text-green-600 mb-3">
+          <Link
+            to="/weather-prediction"
+            className="p-6 bg-white shadow-lg rounded-lg hover:shadow-xl transition transform hover:scale-105 hover:bg-green-50"
+          >
+            <h2 className="text-lg md:text-xl font-semibold text-green-600 mb-3">
               🌤️ Weather Prediction
             </h2>
             <p className="text-gray-700 mb-4">
@@ -48,8 +63,11 @@ const Home = () => {
           </Link>
 
           {/* Crop Guides */}
-          <Link to="/crop-guide" className="p-6 bg-white shadow-lg rounded-lg hover:shadow-xl transition transform hover:scale-105">
-            <h2 className="text-xl font-semibold text-green-600 mb-3">
+          <Link
+            to="/crop-guide"
+            className="p-6 bg-white shadow-lg rounded-lg hover:shadow-xl transition transform hover:scale-105 hover:bg-green-50"
+          >
+            <h2 className="text-lg md:text-xl font-semibold text-green-600 mb-3">
               🌱 Crop Guides
             </h2>
             <p className="text-gray-700 mb-4">
@@ -60,8 +78,11 @@ const Home = () => {
           </Link>
 
           {/* Recent News */}
-          <Link to="/recent-news" className="p-6 bg-white shadow-lg rounded-lg hover:shadow-xl transition transform hover:scale-105">
-            <h2 className="text-xl font-semibold text-green-600 mb-3">
+          <Link
+            to="/recent-news"
+            className="p-6 bg-white shadow-lg rounded-lg hover:shadow-xl transition transform hover:scale-105 hover:bg-green-50"
+          >
+            <h2 className="text-lg md:text-xl font-semibold text-green-600 mb-3">
               📰 Recent News
             </h2>
             <p className="text-gray-700 mb-4">
@@ -72,8 +93,11 @@ const Home = () => {
           </Link>
 
           {/* Expert Support */}
-          <Link to="/expert-support" className="p-6 bg-white shadow-lg rounded-lg hover:shadow-xl transition transform hover:scale-105">
-            <h2 className="text-xl font-semibold text-green-600 mb-3">
+          <Link
+            to="/expert-support"
+            className="p-6 bg-white shadow-lg rounded-lg hover:shadow-xl transition transform hover:scale-105 hover:bg-green-50"
+          >
+            <h2 className="text-lg md:text-xl font-semibold text-green-600 mb-3">
               📞 Expert Support
             </h2>
             <p className="text-gray-700 mb-4">
@@ -83,24 +107,32 @@ const Home = () => {
             <p className="text-green-500 font-semibold">Click to Explore</p>
           </Link>
 
-           {/* Market Place */}
-           <Link to="/market-place" className="p-6 bg-white shadow-lg rounded-lg hover:shadow-xl transition transform hover:scale-105">
-            <h2 className="text-xl font-semibold text-green-600 mb-3">
+          {/* Market Place */}
+          <Link
+            to="/market-place"
+            className="p-6 bg-white shadow-lg rounded-lg hover:shadow-xl transition transform hover:scale-105 hover:bg-green-50"
+          >
+            <h2 className="text-lg md:text-xl font-semibold text-green-600 mb-3">
               🛒 Market Place
             </h2>
             <p className="text-gray-700 mb-4">
-            Discover a wide range of tools, seeds, and services designed to enhance your agricultural journey. 
+              Discover a wide range of tools, seeds, and services designed to
+              enhance your agricultural journey.
             </p>
             <p className="text-green-500 font-semibold">Click to Explore</p>
           </Link>
 
           {/* About Us */}
-          <Link to="/about-us" className="p-6 bg-white shadow-lg rounded-lg hover:shadow-xl transition transform hover:scale-105">
-            <h2 className="text-xl font-semibold text-green-600 mb-3">
+          <Link
+            to="/about-us"
+            className="p-6 bg-white shadow-lg rounded-lg hover:shadow-xl transition transform hover:scale-105 hover:bg-green-50"
+          >
+            <h2 className="text-lg md:text-xl font-semibold text-green-600 mb-3">
               ℹ️ About Us
             </h2>
             <p className="text-gray-700 mb-4">
-            Transforming lives with innovative, sustainable solutions for a brighter future.
+              Transforming lives with innovative, sustainable solutions for a
+              brighter future.
             </p>
             <p className="text-green-500 font-semibold">Click to Explore</p>
           </Link>
