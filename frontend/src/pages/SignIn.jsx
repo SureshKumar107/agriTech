@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 
 const SignIn = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-blue-100 flex items-center justify-center p-6">
-      <div className="max-w-md w-full bg-white p-8 rounded-lg shadow-md">
+    <div className="min-h-screen bg-gradient-to-b from-purple-300 via-blue-200 to-indigo-400 flex items-center justify-center p-6">
+      <div className="max-w-md w-full bg-white bg-opacity-90 p-8 rounded-lg shadow-xl">
         {/* Header Section */}
-        <h1 className="text-4xl font-bold text-center text-blue-600 mb-6">
+        <h1 className="text-4xl font-extrabold text-center text-indigo-700 mb-6">
           Welcome Back!
         </h1>
-        <p className="text-lg text-gray-600 text-center mb-8">
+        <p className="text-lg text-gray-700 text-center mb-8">
           Log in to access your account and manage your activities.
         </p>
 
@@ -27,7 +27,7 @@ const SignIn = () => {
               type="email"
               id="email"
               placeholder="Enter your email"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none"
               required
             />
           </div>
@@ -44,7 +44,7 @@ const SignIn = () => {
               type="password"
               id="password"
               placeholder="Enter your password"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none"
               required
             />
           </div>
@@ -54,13 +54,13 @@ const SignIn = () => {
             <label className="inline-flex items-center">
               <input
                 type="checkbox"
-                className="form-checkbox text-blue-600"
+                className="form-checkbox text-indigo-600"
               />
               <span className="ml-2 text-gray-600">Remember Me</span>
             </label>
             <a
               href="#"
-              className="text-blue-600 hover:underline text-sm font-medium"
+              className="text-indigo-600 hover:underline text-sm font-medium"
             >
               Forgot Password?
             </a>
@@ -69,7 +69,7 @@ const SignIn = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg font-semibold shadow-md hover:bg-blue-700 transition duration-200"
+            className="w-full bg-indigo-600 text-white py-2 px-4 rounded-lg font-semibold shadow-md hover:bg-indigo-700 transition duration-200"
           >
             Sign In
           </button>
@@ -96,14 +96,12 @@ const SignIn = () => {
         <div className="mt-8 text-center">
           <p className="text-gray-600">
             Don't have an account?{" "}
-            <a
-              href="#"
-              className="text-blue-600 hover:underline font-medium"
+            <Link
+              to="/sign-up"
+              className="text-indigo-600 hover:underline font-medium"
             >
-            <Link to="/sign-up">
-            Sign Up 
+              Sign Up
             </Link>
-            </a>
           </p>
         </div>
       </div>

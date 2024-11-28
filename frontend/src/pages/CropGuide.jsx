@@ -1,97 +1,124 @@
 import React from "react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 const CropGuide = () => {
+  const crops = [
+    {
+      name: "Rice",
+      emoji: "🌾",
+      time: "June - July",
+      soil: "Loamy or clay soil",
+      tip: "Use pheromone traps for stem borers.",
+    },
+    {
+      name: "Wheat",
+      emoji: "🌿",
+      time: "October - November",
+      soil: "Well-drained loamy soil",
+      tip: "Use nitrogen-rich fertilizers during early growth stages.",
+    },
+    {
+      name: "Maize",
+      emoji: "🌽",
+      time: "February - June",
+      soil: "Sandy loam soil",
+      tip: "Avoid overwatering; ensure moderate moisture.",
+    },
+    {
+      name: "Cotton",
+      emoji: "🌺",
+      time: "April - May",
+      soil: "Black or red soil",
+      tip: "Apply neem oil to control aphids and whiteflies.",
+    },
+    {
+      name: "Tomato",
+      emoji: "🍅",
+      time: "October - January",
+      soil: "Well-drained sandy soil",
+      tip: "Regular watering; avoid waterlogging.",
+    },
+    {
+      name: "Potatoes",
+      emoji: "🥔",
+      time: "October - December",
+      soil: "Loamy soil with good drainage",
+      tip: "Use potassium-rich fertilizers.",
+    },
+    {
+      name: "Sugarcane",
+      emoji: "🍬",
+      time: "February - March",
+      soil: "Deep, well-drained soil",
+      tip: "Requires frequent irrigation.",
+    },
+    {
+      name: "Sunflower",
+      emoji: "🌻",
+      time: "January - February",
+      soil: "Well-drained loamy soil",
+      tip: "Use organic sprays to deter pests.",
+    },
+    {
+      name: "Peanuts",
+      emoji: "🥜",
+      time: "June - July",
+      soil: "Light, sandy loam soil",
+      tip: "Ensure consistent moisture levels.",
+    },
+    {
+      name: "Carrots",
+      emoji: "🥕",
+      time: "October - December",
+      soil: "Sandy, well-drained soil",
+      tip: "Water regularly to keep soil moist.",
+    },
+    {
+      name: "Grapes",
+      emoji: "🍇",
+      time: "February - April",
+      soil: "Sandy loam or clay loam",
+      tip: "Use organic compost for better yield.",
+    },
+    {
+      name: "Spinach",
+      emoji: "🥬",
+      time: "September - February",
+      soil: "Moist, fertile soil",
+      tip: "Regular, shallow watering.",
+    },
+  ];
+
   return (
-    <div className="bg-gradient-to-b from-green-50 via-white to-green-100 min-h-screen p-6">
-      <div className="max-w-6xl mx-auto">
+    <div className="bg-green-50 min-h-screen p-6">
+      <div className="max-w-7xl mx-auto">
         {/* Header Section */}
-        <h1 className="text-4xl font-bold text-center text-green-700 mb-6">
+        <h1 className="text-5xl font-extrabold text-center text-green-800 mb-6">
           🌱 Crop Guide
         </h1>
-        <p className="text-lg text-gray-700 text-center mb-10">
+        <p className="text-xl text-gray-700 text-center mb-10">
           Discover the best practices for growing healthy crops and achieving
           better yields. From sowing techniques to pest management, we’ve got
           you covered!
         </p>
 
-        {/* Crop Sections */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {/* Crop: Rice */}
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h2 className="text-2xl font-semibold text-green-600 mb-4">
-              🌾 Rice
-            </h2>
-            <p className="text-gray-700">
-              <strong>Sowing Time:</strong> June - July <br />
-              <strong>Soil Type:</strong> Loamy or clay soil <br />
-              <strong>Pest Control:</strong> Use pheromone traps for stem
-              borers.
-            </p>
-          </div>
-
-          {/* Crop: Wheat */}
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h2 className="text-2xl font-semibold text-green-600 mb-4">
-              🌿 Wheat
-            </h2>
-            <p className="text-gray-700">
-              <strong>Sowing Time:</strong> October - November <br />
-              <strong>Soil Type:</strong> Well-drained loamy soil <br />
-              <strong>Fertilizer:</strong> Use nitrogen-rich fertilizers during
-              early growth stages.
-            </p>
-          </div>
-
-          {/* Crop: Maize */}
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h2 className="text-2xl font-semibold text-green-600 mb-4">
-              🌽 Maize
-            </h2>
-            <p className="text-gray-700">
-              <strong>Sowing Time:</strong> February - June <br />
-              <strong>Soil Type:</strong> Sandy loam soil <br />
-              <strong>Watering:</strong> Avoid overwatering; ensure moderate
-              moisture.
-            </p>
-          </div>
-
-          {/* Crop: Cotton */}
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h2 className="text-2xl font-semibold text-green-600 mb-4">
-              🌺 Cotton
-            </h2>
-            <p className="text-gray-700">
-              <strong>Sowing Time:</strong> April - May <br />
-              <strong>Soil Type:</strong> Black or red soil <br />
-              <strong>Pest Control:</strong> Apply neem oil to control aphids
-              and whiteflies.
-            </p>
-          </div>
-
-          {/* Crop: Tomato */}
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h2 className="text-2xl font-semibold text-green-600 mb-4">
-              🍅 Tomato
-            </h2>
-            <p className="text-gray-700">
-              <strong>Sowing Time:</strong> October - January <br />
-              <strong>Soil Type:</strong> Well-drained sandy soil <br />
-              <strong>Watering:</strong> Regular watering; avoid waterlogging.
-            </p>
-          </div>
-
-          {/* Crop: Potatoes */}
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h2 className="text-2xl font-semibold text-green-600 mb-4">
-              🥔 Potatoes
-            </h2>
-            <p className="text-gray-700">
-              <strong>Sowing Time:</strong> October - December <br />
-              <strong>Soil Type:</strong> Loamy soil with good drainage <br />
-              <strong>Fertilizer:</strong> Use potassium-rich fertilizers.
-            </p>
-          </div>
+        {/* Dynamic Crop Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {crops.map((crop, index) => (
+            <div
+              key={index}
+              className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition"
+            >
+              <h2 className="text-2xl font-bold text-green-700 mb-4">
+                {crop.emoji} {crop.name}
+              </h2>
+              <p className="text-gray-700">
+                <strong>Sowing Time:</strong> {crop.time} <br />
+                <strong>Soil Type:</strong> {crop.soil} <br />
+                <strong>Tip:</strong> {crop.tip}
+              </p>
+            </div>
+          ))}
         </div>
 
         {/* Footer Section */}
@@ -101,9 +128,7 @@ const CropGuide = () => {
             personalized advice.
           </p>
           <button className="px-6 py-3 bg-green-600 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 transition">
-            <Link to="/contact-experts">
-            Contact Experts
-            </Link>
+            <Link to="/contact-experts">Contact Experts</Link>
           </button>
         </div>
       </div>

@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 
 const SignUp = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-green-50 via-white to-green-100 flex items-center justify-center p-6">
-      <div className="max-w-md w-full bg-white p-8 rounded-lg shadow-md">
+    <div className="min-h-screen bg-gray-500 flex items-center justify-center px-4 sm:px-6 lg:px-8">
+      <div className="max-w-sm sm:max-w-md lg:max-w-lg w-full bg-white p-6 sm:p-8 rounded-lg shadow-lg">
         {/* Header Section */}
-        <h1 className="text-4xl font-bold text-center text-green-600 mb-6">
+        <h1 className="text-3xl sm:text-4xl font-bold text-center text-blue-600 mb-4">
           Join Us Today!
         </h1>
-        <p className="text-lg text-gray-600 text-center mb-8">
+        <p className="text-sm sm:text-lg text-gray-600 text-center mb-6">
           Create an account to access exclusive features and grow with us.
         </p>
 
@@ -27,7 +27,7 @@ const SignUp = () => {
               type="text"
               id="fullName"
               placeholder="Enter your full name"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
               required
             />
           </div>
@@ -44,7 +44,7 @@ const SignUp = () => {
               type="email"
               id="email"
               placeholder="Enter your email"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
               required
             />
           </div>
@@ -61,7 +61,7 @@ const SignUp = () => {
               type="password"
               id="password"
               placeholder="Create a password"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
               required
             />
           </div>
@@ -78,7 +78,7 @@ const SignUp = () => {
               type="password"
               id="confirmPassword"
               placeholder="Confirm your password"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
               required
             />
           </div>
@@ -88,14 +88,14 @@ const SignUp = () => {
             <input
               type="checkbox"
               id="terms"
-              className="form-checkbox text-green-600"
+              className="form-checkbox text-blue-600"
               required
             />
             <label htmlFor="terms" className="ml-2 text-gray-600">
               I agree to the{" "}
               <a
                 href="#"
-                className="text-green-600 hover:underline font-medium"
+                className="text-blue-600 hover:underline font-medium"
               >
                 Terms and Conditions
               </a>
@@ -105,7 +105,7 @@ const SignUp = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full bg-green-600 text-white py-2 px-4 rounded-lg font-semibold shadow-md hover:bg-green-700 transition duration-200"
+            className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg font-semibold shadow-md hover:bg-blue-700 transition duration-200"
           >
             Sign Up
           </button>
@@ -132,14 +132,12 @@ const SignUp = () => {
         <div className="mt-8 text-center">
           <p className="text-gray-600">
             Already have an account?{" "}
-            <a
-              href="#"
-              className="text-green-600 hover:underline font-medium"
+            <Link
+              to="/sign-in"
+              className="text-blue-600 hover:underline font-medium"
             >
-              <Link to="/sign-in">
               Sign In
-              </Link>
-            </a>
+            </Link>
           </p>
         </div>
       </div>
