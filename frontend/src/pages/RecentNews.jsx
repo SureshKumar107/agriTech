@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import climateFarming from "../img/RecentNews/image1.jpg";
-import newAgricultural from "../img/RecentNews/image2.jpg";
+import climateFarming from "../img/RecentNews/Image1.jpg";
+import newAgricultural from "../img/RecentNews/Image2.jpg";
 import breakthrough from "../img/RecentNews/image3.jpg";
 import advances from "../img/RecentNews/image4.jpg";
 import waterConservation from "../img/RecentNews/image5.jpg";
@@ -9,7 +9,7 @@ import sustainable from "../img/RecentNews/image7.jpg";
 import agriculturalData from "../img/RecentNews/image8.jpg";
 import satelliteFarming from "../img/RecentNews/image9.jpg";
 import geneticallyModified from "../img/RecentNews/image10.jpg";
-import aidrivenCrop from "../img/RecentNews/image11.jpg";
+import aidrivenCrop from "../img/RecentNews/Image11.jpg";
 import innovativeFarming from "../img/RecentNews/image12.jpg";
 
 const RecentNews = () => {
