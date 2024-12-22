@@ -1,7 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const SignUp = () => {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (password !== confirmPassword) {
+      alert("Passwords do not match");
+      return;
+    }
+    try {
+      const response = await axios.post("http://localhost:5173/sign-up", {
+        username,
+        email,
+        password,
+      });
+      console.log(response.data);
+      // Handle successful response
+    } catch (error) {
+      console.error(error);
+      // Handle error
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-500 flex items-center justify-center px-4 sm:px-6 lg:px-8">
       <div className="max-w-sm sm:max-w-md lg:max-w-lg w-full bg-white p-6 sm:p-8 rounded-lg shadow-lg">
@@ -14,71 +40,56 @@ const SignUp = () => {
         </p>
 
         {/* Sign-Up Form */}
-        <form>
-          {/* Full Name Input */}
+        <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label
-              htmlFor="fullName"
-              className="block text-gray-700 font-medium mb-2"
-            >
-              Full Name
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
+              Username
             </label>
             <input
               type="text"
-              id="fullName"
-              placeholder="Enter your full name"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              id="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               required
             />
           </div>
-
-          {/* Email Input */}
           <div className="mb-4">
-            <label
-              htmlFor="email"
-              className="block text-gray-700 font-medium mb-2"
-            >
-              Email Address
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+              Email
             </label>
             <input
               type="email"
               id="email"
-              placeholder="Enter your email"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               required
             />
           </div>
-
-          {/* Password Input */}
           <div className="mb-4">
-            <label
-              htmlFor="password"
-              className="block text-gray-700 font-medium mb-2"
-            >
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
               Password
             </label>
             <input
               type="password"
               id="password"
-              placeholder="Create a password"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               required
             />
           </div>
-
-          {/* Confirm Password Input */}
-          <div className="mb-6">
-            <label
-              htmlFor="confirmPassword"
-              className="block text-gray-700 font-medium mb-2"
-            >
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="confirmPassword">
               Confirm Password
             </label>
             <input
               type="password"
               id="confirmPassword"
-              placeholder="Confirm your password"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               required
             />
           </div>
@@ -92,54 +103,22 @@ const SignUp = () => {
               required
             />
             <label htmlFor="terms" className="ml-2 text-gray-600">
-              I agree to the{" "}
-              <a
-                href="#"
-                className="text-blue-600 hover:underline font-medium"
-              >
-                Terms and Conditions
-              </a>
+              I agree to the terms and conditions
             </label>
           </div>
 
-          {/* Submit Button */}
-          <button
-            type="submit"
-            className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg font-semibold shadow-md hover:bg-blue-700 transition duration-200"
-          >
-            Sign Up
-          </button>
-        </form>
-
-        {/* Divider */}
-        <div className="mt-6 flex items-center justify-center">
-          <div className="border-t border-gray-300 w-1/4"></div>
-          <p className="text-gray-500 mx-2">or</p>
-          <div className="border-t border-gray-300 w-1/4"></div>
-        </div>
-
-        {/* Social Sign-Up Options */}
-        <div className="mt-6 flex flex-col gap-4">
-          <button className="w-full flex items-center justify-center py-2 px-4 bg-blue-500 text-white rounded-lg font-semibold shadow-md hover:bg-blue-600 transition duration-200">
-            <span className="mr-2">🔵</span> Sign Up with Facebook
-          </button>
-          <button className="w-full flex items-center justify-center py-2 px-4 bg-red-500 text-white rounded-lg font-semibold shadow-md hover:bg-red-600 transition duration-200">
-            <span className="mr-2">🔴</span> Sign Up with Google
-          </button>
-        </div>
-
-        {/* Footer Section */}
-        <div className="mt-8 text-center">
-          <p className="text-gray-600">
-            Already have an account?{" "}
-            <Link
-              to="/sign-in"
-              className="text-blue-600 hover:underline font-medium"
+          <div className="flex items-center justify-between">
+            <button
+              type="submit"
+              className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             >
+              Sign Up
+            </button>
+            <Link to="/sign-in" className="inline-block align-baseline font-bold text-sm text-blue-600 hover:text-blue-800">
               Sign In
             </Link>
-          </p>
-        </div>
+          </div>
+        </form>
       </div>
     </div>
   );
