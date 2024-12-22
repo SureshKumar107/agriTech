@@ -1,7 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const SignIn = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post("http://localhost:5173/sign-in", {
+        email,
+        password,
+      });
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-purple-300 via-blue-200 to-indigo-400 flex items-center justify-center p-6">
       <div className="max-w-md w-full bg-white bg-opacity-90 p-8 rounded-lg shadow-xl">
@@ -14,96 +31,45 @@ const SignIn = () => {
         </p>
 
         {/* Sign-In Form */}
-        <form>
-          {/* Email Input */}
+        <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label
-              htmlFor="email"
-              className="block text-gray-700 font-medium mb-2"
-            >
-              Email Address
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+              Email
             </label>
             <input
               type="email"
               id="email"
-              placeholder="Enter your email"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               required
             />
           </div>
-
-          {/* Password Input */}
           <div className="mb-6">
-            <label
-              htmlFor="password"
-              className="block text-gray-700 font-medium mb-2"
-            >
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
               Password
             </label>
             <input
               type="password"
               id="password"
-              placeholder="Enter your password"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
               required
             />
           </div>
-
-          {/* Remember Me and Forgot Password */}
-          <div className="flex items-center justify-between mb-6">
-            <label className="inline-flex items-center">
-              <input
-                type="checkbox"
-                className="form-checkbox text-indigo-600"
-              />
-              <span className="ml-2 text-gray-600">Remember Me</span>
-            </label>
-            <a
-              href="#"
-              className="text-indigo-600 hover:underline text-sm font-medium"
+          <div className="flex items-center justify-between">
+            <button
+              type="submit"
+              className="bg-indigo-700 hover:bg-indigo-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             >
-              Forgot Password?
-            </a>
-          </div>
-
-          {/* Submit Button */}
-          <button
-            type="submit"
-            className="w-full bg-indigo-600 text-white py-2 px-4 rounded-lg font-semibold shadow-md hover:bg-indigo-700 transition duration-200"
-          >
-            Sign In
-          </button>
-        </form>
-
-        {/* Divider */}
-        <div className="mt-6 flex items-center justify-center">
-          <div className="border-t border-gray-300 w-1/4"></div>
-          <p className="text-gray-500 mx-2">or</p>
-          <div className="border-t border-gray-300 w-1/4"></div>
-        </div>
-
-        {/* Social Sign-In Options */}
-        <div className="mt-6 flex flex-col gap-4">
-          <button className="w-full flex items-center justify-center py-2 px-4 bg-blue-500 text-white rounded-lg font-semibold shadow-md hover:bg-blue-600 transition duration-200">
-            <span className="mr-2">🔵</span> Continue with Facebook
-          </button>
-          <button className="w-full flex items-center justify-center py-2 px-4 bg-red-500 text-white rounded-lg font-semibold shadow-md hover:bg-red-600 transition duration-200">
-            <span className="mr-2">🔴</span> Continue with Google
-          </button>
-        </div>
-
-        {/* Footer Section */}
-        <div className="mt-8 text-center">
-          <p className="text-gray-600">
-            Don't have an account?{" "}
-            <Link
-              to="/sign-up"
-              className="text-indigo-600 hover:underline font-medium"
-            >
+              Sign In
+            </button>
+            <Link to="/sign-up" className="inline-block align-baseline font-bold text-sm text-indigo-700 hover:text-indigo-800">
               Sign Up
             </Link>
-          </p>
-        </div>
+          </div>
+        </form>
       </div>
     </div>
   );
