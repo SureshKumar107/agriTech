@@ -67,34 +67,22 @@ const Navbar = () => {
             Recent News
           </Link>
           <Link
-            to="/market-place"
-            className="block lg:inline-block px-2 py-1 hover:underline text-left"
-          >
-            Market Place
-          </Link>
-          <Link
             to="/about-us"
             className="block lg:inline-block px-2 py-1 hover:underline text-left"
           >
             About Us
           </Link>
           <Link
-            to="/contact-us"
-            className="block lg:inline-block px-2 py-1 hover:underline text-left"
-          >
-            Contact Us
-          </Link>
-          <Link
-            to="/sign-up"
+            to="/register"
             className="block lg:inline-block px-2 py-1 bg-green-700 rounded-full hover:bg-green-600 lg:ml-4 text-left"
           >
             Sign Up
           </Link>
           <Link
-            to="/sign-in"
+            to="/login"
             className="block lg:inline-block px-2 py-1 bg-green-700 rounded-full hover:bg-green-600 lg:ml-4 text-left"
           >
-            Sign In
+            Login
           </Link>
         </div>
       </div>
