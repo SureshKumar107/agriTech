@@ -9,7 +9,6 @@ import RecentNews from "./pages/RecentNews";
 import AboutUs from "./pages/AboutUs";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
-import TradingPage from "./pages/TradingPage";
 import Footer from "./components/Footer";
 import ExpertSupport from "./additional pages/ExpertSupport";
 import DetailedForecast from "./additional pages/DetailedForecast";
@@ -27,7 +26,6 @@ function App() {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/register" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/tradepage" element={<TradingPage/>}/>
         <Route path="/expert-support" element={<ExpertSupport/>}/>
         <Route path="/detailed-forecast" element={<DetailedForecast/>}/>
         <Route path="/contact-experts" element={<ContactExperts/>}/>

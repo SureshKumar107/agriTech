@@ -6,7 +6,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-gradient-to-r from-green-600 to-green-800 text-red shadow-lg relative">
+    <nav className="bg-gradient-to-r from-green-600 to-green-800 text-white shadow-lg">
       <div className="container mx-auto flex justify-between items-center p-4">
         {/* Logo Section */}
         <div>
@@ -18,7 +18,8 @@ const Navbar = () => {
         {/* Hamburger Menu Button */}
         <button
           className="lg:hidden text-white focus:outline-none"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          onClick={() => setIsMenuOpen((prev) => !prev)}
+          aria-label="Toggle Menu"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +32,11 @@ const Navbar = () => {
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth="2"
-              d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+              d={
+                isMenuOpen
+                  ? "M6 18L18 6M6 6l12 12" // X icon
+                  : "M4 6h16M4 12h16M4 18h16" // Hamburger icon
+              }
             />
           </svg>
         </button>
@@ -44,43 +49,43 @@ const Navbar = () => {
         >
           <Link
             to="/"
-            className="block lg:inline-block px-2 py-1 hover:underline text-left"
+            className="block lg:inline-block px-2 py-1 hover:underline text-center lg:text-left"
           >
             Home
           </Link>
           <Link
             to="/weather-prediction"
-            className="block lg:inline-block px-2 py-1 hover:underline text-left"
+            className="block lg:inline-block px-2 py-1 hover:underline text-center lg:text-left"
           >
             Weather Prediction
           </Link>
           <Link
             to="/crop-guide"
-            className="block lg:inline-block px-2 py-1 hover:underline text-left"
+            className="block lg:inline-block px-2 py-1 hover:underline text-center lg:text-left"
           >
             Crop Guide
           </Link>
           <Link
             to="/recent-news"
-            className="block lg:inline-block px-2 py-1 hover:underline text-left"
+            className="block lg:inline-block px-2 py-1 hover:underline text-center lg:text-left"
           >
             Recent News
           </Link>
           <Link
             to="/about-us"
-            className="block lg:inline-block px-2 py-1 hover:underline text-left"
+            className="block lg:inline-block px-2 py-1 hover:underline text-center lg:text-left"
           >
             About Us
           </Link>
           <Link
             to="/register"
-            className="block lg:inline-block px-2 py-1 bg-green-700 rounded-full hover:bg-green-600 lg:ml-4 text-left"
+            className="block lg:inline-block px-4 py-2 bg-green-700 text-white rounded-full hover:bg-green-600 text-center lg:ml-4 lg:text-left"
           >
             Sign Up
           </Link>
           <Link
             to="/login"
-            className="block lg:inline-block px-2 py-1 bg-green-700 rounded-full hover:bg-green-600 lg:ml-4 text-left"
+            className="block lg:inline-block px-4 py-2 bg-green-700 text-white rounded-full hover:bg-green-600 text-center lg:ml-4 lg:text-left"
           >
             Login
           </Link>
