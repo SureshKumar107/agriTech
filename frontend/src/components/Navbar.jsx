@@ -6,7 +6,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-gradient-to-r from-green-600 to-green-800 text-white shadow-lg relative">
+    <nav className="bg-gradient-to-r from-green-600 to-green-800 text-red shadow-lg relative">
       <div className="container mx-auto flex justify-between items-center p-4">
         {/* Logo Section */}
         <div>
