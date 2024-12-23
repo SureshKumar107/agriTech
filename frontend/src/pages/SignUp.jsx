@@ -1,127 +1,78 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
+import React from 'react'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
-const SignUp = () => {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+function Signup() {
+    const [name, setName] = useState()
+    const [email, setEmail] = useState()
+    const [password, setPassword] = useState()
+    const navigate = useNavigate()
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (password !== confirmPassword) {
-      alert("Passwords do not match");
-      return;
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        axios.post('http://localhost:3001/register',{name, email, password})
+        .then(result => {console.log(result)
+            navigate('/login')
+        })
+        .catch(err => console.log(err))
     }
-    try {
-      const response = await axios.post("http://localhost:5173/sign-up", {
-        username,
-        email,
-        password,
-      });
-      console.log(response.data);
-      // Handle successful response
-    } catch (error) {
-      console.error(error);
-      // Handle error
-    }
-  };
 
   return (
-    <div className="min-h-screen bg-gray-500 flex items-center justify-center px-4 sm:px-6 lg:px-8">
-      <div className="max-w-sm sm:max-w-md lg:max-w-lg w-full bg-white p-6 sm:p-8 rounded-lg shadow-lg">
-        {/* Header Section */}
-        <h1 className="text-3xl sm:text-4xl font-bold text-center text-blue-600 mb-4">
-          Join Us Today!
-        </h1>
-        <p className="text-sm sm:text-lg text-gray-600 text-center mb-6">
-          Create an account to access exclusive features and grow with us.
-        </p>
-
-        {/* Sign-Up Form */}
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
-              Username
-            </label>
-            <input
-              type="text"
-              id="username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
-              Password
-            </label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="confirmPassword">
-              Confirm Password
-            </label>
-            <input
-              type="password"
-              id="confirmPassword"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              required
-            />
-          </div>
-
-          {/* Terms and Conditions */}
-          <div className="flex items-center mb-6">
-            <input
-              type="checkbox"
-              id="terms"
-              className="form-checkbox text-blue-600"
-              required
-            />
-            <label htmlFor="terms" className="ml-2 text-gray-600">
-              I agree to the terms and conditions
-            </label>
-          </div>
-
-          <div className="flex items-center justify-between">
-            <button
-              type="submit"
-              className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            >
-              Sign Up
+    <div className="d-flex justify-content-center align-items-center bg-secondary vh-100">
+        <div className="bg-white p-3 rounded w-25">
+            <h2>Register</h2>
+            <form onSubmit={handleSubmit}>
+            <div className="mb-3">
+                <label htmlFor="email">
+                    <strong>Name</strong>
+                </label>
+                <input
+                    type="text"
+                    placeholder="Enter Name"
+                    autoComplete="off"
+                    name="email"
+                    className="form-control rounded-0"
+                    onChange={(e) => setName(e.target.value)}
+                />
+            </div>
+            <div className="mb-3">
+                <label htmlFor="email">
+                    <strong>Email</strong>
+                </label>
+                <input
+                    type="email"
+                    placeholder="Enter Email"
+                    autoComplete="off"
+                    name="email"
+                    className="form-control rounded-0"
+                    onChange={(e) => setEmail(e.target.value)}
+                />
+            </div>
+            <div className="mb-3">
+                <label htmlFor="email">
+                    <strong>Password</strong>
+                </label>
+                <input
+                    type="password"
+                    placeholder="Enter Password"
+                    name="password"
+                    className="form-control rounded-0"
+                    onChange={(e) => setPassword(e.target.value)}
+                />
+            </div>
+            <button type="submit" className="btn btn-success w-100 rounded-0">
+                Register 
             </button>
-            <Link to="/sign-in" className="inline-block align-baseline font-bold text-sm text-blue-600 hover:text-blue-800">
-              Sign In
+            </form>
+            <p>Already Have an Account</p>
+            <Link to="/login" className="btn btn-default border w-100 bg-light rounded-e text-decoration-none">
+                Login
             </Link>
-          </div>
-        </form>
-      </div>
+        </div>
     </div>
-  );
-};
+  )
+}
 
-export default SignUp;
+export default Signup
